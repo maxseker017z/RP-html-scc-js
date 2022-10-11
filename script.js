@@ -47,8 +47,8 @@ const nav = document.querySelector(".nav"),
         {
             aside.classList.toggle("open");
             navToggleBtn.classList.toggle("open");
-            for(let i=0; i<totalSection.length; i++)
+            for(let i=0; i<totalSection; i++)
             {
-                allSection[i].classList.toggle("open")
+                allSection[i].classList.toggle("open");
             }
         }

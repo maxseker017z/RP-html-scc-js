@@ -47,8 +47,9 @@ ul{
     right:0;
     bottom:0;
     z-index: 0;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition:all 0.3s ease;
 }
 .section.back-section{
     z-index: 1;
@@ -162,6 +163,8 @@ ul{
     justify-content: center;
     align-items: center;
     z-index: 10;
+    transition:all 0.3s ease;
+
 }
 .aside .logo{
     position:absolute;
@@ -218,6 +221,7 @@ ul{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition:all 0.3s ease;
 }
 .aside .nav-toggle span{
     height: 2px;
@@ -226,6 +230,9 @@ ul{
     display: inline-block;
     position: relative;
 } 
+.aside .nav-toggle.open span{
+    background-color: transparent;
+}
 .aside .nav-toggle span:before{
     content: '';
     height: 2px;
@@ -236,6 +243,10 @@ ul{
     left:0;
 
 }
+.aside .nav-toggle.open span::before{
+    transform: rotate(45deg);
+    top:0;
+}
 .aside .nav-toggle span:after{
     content: '';
     height: 2px;
@@ -245,6 +256,10 @@ ul{
     top: 6px;
     left:0;
 
+}
+.aside .nav-toggle.open span::after{
+    transform: rotate(-45deg);
+    top:0;
 }
 .aside .nav
 {
@@ -679,6 +694,14 @@ h3.my-profession{
     .aside.open{
         left:0;
     }
+    .section
+    {
+        left:0;
+    }
+    .section.open
+    {
+        left:270px !important;
+    }
     .aside .nav-toggle{
         display: flex;
         left:30px;
@@ -689,12 +712,6 @@ h3.my-profession{
     .main-content{
         padding-left:0;
         left:30px;
-    }
-    .section{
-        left:0;
-    }
-    .section.open{
-        left:270px;
     }
     .about .about-content .personal-info .info-item p span{
         display: block;
